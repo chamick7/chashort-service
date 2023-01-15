@@ -1,0 +1,8 @@
+CREATE TABLE urls (
+    id BIGSERIAL PRIMARY KEY,
+    short_id VARCHAR(255) NOT NULL UNIQUE,
+    short_url VARCHAR(255) NOT NULL,
+    long_url TEXT NOT NULL,
+    redirect_count INT NOT NULL DEFAULT 0,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
