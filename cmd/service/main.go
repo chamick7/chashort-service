@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"net/http"
+	"os"
 
 	"github.com/chamick7/short-service/controller"
 	"github.com/chamick7/short-service/database"
@@ -27,5 +28,5 @@ func main() {
 		return c.String(http.StatusOK, "ok")
 	})
 
-	e.Logger.Fatal(e.Start(":5000"))
+	e.Logger.Fatal(e.Start(":" + os.Getenv("PORT")))
 }
